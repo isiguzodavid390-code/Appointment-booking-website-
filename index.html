@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book an Appointment</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f3ef;
+      color: #242424;
+    }
+    header {
+      background: #202b25;
+      color: white;
+      text-align: center;
+      padding: 35px 15px;
+    }
+    header h1 { margin: 0 0 10px; }
+    main {
+      max-width: 520px;
+      margin: 35px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 5px 25px #00000012;
+    }
+    label {
+      display: block;
+      margin-top: 16px;
+      font-weight: bold;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 13px;
+      margin-top: 7px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 24px;
+      background: #202b25;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer { text-align: center; padding: 20px; color: #666; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Book an Appointment</h1>
+    <p>We look forward to seeing you!</p>
+  </header>
+
+  <main>
+    <h2>Request Your Booking</h2>
+    <p>Complete the form below to request an appointment.</p>
+
+    <form id="bookingForm">
+      <label for="name">Full name</label>
+      <input id="name" name="name" required>
+
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" required>
+
+      <label for="phone">Phone number</label>
+      <input id="phone" name="phone" type="tel" required>
+
+      <label for="service">Choose a service</label>
+      <select id="service" name="service" required>
+        <option value="">Select a service</option>
+        <option>Consultation</option>
+        <option>Personal appointment</option>
+        <option>Other service</option>
+      </select>
+
+      <label for="date">Preferred date</label>
+      <input id="date" name="date" type="date" required>
+
+      <label for="time">Preferred time</label>
+      <select id="time" name="time" required>
+        <option value="">Select a time</option>
+        <option>9:00 AM</option>
+        <option>10:00 AM</option>
+        <option>11:00 AM</option>
+        <option>12:00 PM</option>
+        <option>1:00 PM</option>
+        <option>2:00 PM</option>
+        <option>3:00 PM</option>
+        <option>4:00 PM</option>
+      </select>
+
+      <label for="notes">Additional details (optional)</label>
+      <textarea id="notes" name="notes" rows="3"></textarea>
+
+      <button type="submit">Request Appointment</button>
+      <p id="message" role="status"></p>
+    </form>
+  </main>
+
+  <footer>Thank you for choosing us.</footer>
+
+  <script>
+    document.getElementById("date").min =
+      new Date().toLocaleDateString("en-CA");
+
+    document.getElementById("bookingForm").addEventListener("submit",
+      function(event) {
+        event.preventDefault();
+        document.getElementById("message").textContent =
+          "Your form is ready, but online submission is not connected yet. Please contact the service provider to complete your booking.";
+      }
+    );
+  </script>
+</body>
+</html>
