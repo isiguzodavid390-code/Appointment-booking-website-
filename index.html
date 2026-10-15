@@ -105,18 +105,5 @@
   </main>
 
   <footer>Thank you for choosing us.</footer>
-
-  <script>
-    document.getElementById("date").min =
-      new Date().toLocaleDateString("en-CA");
-
-    document.getElementById("bookingForm").addEventListener("submit",
-      function(event) {
-        event.preventDefault();
-        document.getElementById("message").textContent =
-          "Your form is ready, but online submission is not connected yet. Please contact the service provider to complete your booking.";
-      }
-    );
-  </script>
 </body>
 </html>
