@@ -1,888 +1,108 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taylorroseink | High-End Custom Tattoo Studio</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        gold: {
-                            400: '#facc15',
-                            500: '#eab308',
-                            600: '#ca8a04',
-                            accent: '#d4af37'
-                        },
-                        dark: {
-                            900: '#0a0a0c',
-                            800: '#121318',
-                            700: '#1c1e26',
-                            600: '#282b37'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Cinzel', 'serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Google Fonts & Lucide Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0a0a0c;
-            color: #f3f4f6;
-        }
-        .font-serif-title {
-            font-family: 'Cinzel', serif;
-        }
-        .glass-panel {
-            background: rgba(18, 19, 24, 0.75);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-        }
-        .glass-panel-gold {
-            background: rgba(202, 138, 4, 0.08);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #fff standard, #d4af37 50%, #996515 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gold-border-glow:focus {
-            outline: none;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-            border-color: #d4af37;
-        }
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0a0a0c;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #282b37;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #d4af37;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><title>Taylorroseink | Book an Appointment</title></title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f3ef;
+      color: #242424;
+    }
+    header {
+      background: #202b25;
+      color: white;
+      text-align: center;
+      padding: 35px 15px;
+    }
+    header h1 { margin: 0 0 10px; }
+    main {
+      max-width: 520px;
+      margin: 35px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 5px 25px #00000012;
+    }
+    label {
+      display: block;
+      margin-top: 16px;
+      font-weight: bold;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 13px;
+      margin-top: 7px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 24px;
+      background: #202b25;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer { text-align: center; padding: 20px; color: #666; }
+  </style>
 </head>
-<body class="bg-dark-900 text-gray-100 antialiased min-h-screen flex flex-col justify-between">
-
-    <!-- Navigation Bar -->
-    <header class="sticky top-0 z-40 w-full glass-panel border-b border-dark-700/60 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 rounded-full border border-gold-accent/40 flex items-center justify-center bg-dark-800 group-hover:border-gold-accent transition-colors">
-                        <i data-lucide="feather" class="w-5 h-5 text-gold-accent"></i>
-                    </div>
-                    <div>
-                        <span class="font-serif-title text-xl font-bold tracking-widest text-white group-hover:text-gold-accent transition-colors block">TAYLORROSEINK</span>
-                        <span class="text-[10px] tracking-[0.25em] text-gray-400 uppercase block -mt-1">Private Tattoo Studio</span>
-                    </div>
-                </a>
-
-                <!-- Desktop Nav -->
-                <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
-                    <a href="#portfolio" class="text-gray-300 hover:text-gold-accent transition-colors">PORTFOLIO</a>
-                    <a href="#pricing" class="text-gray-300 hover:text-gold-accent transition-colors">PRICING TIERS</a>
-                    <a href="#deposit-policy" class="text-gray-300 hover:text-gold-accent transition-colors">DEPOSIT POLICY</a>
-                    <a href="#aftercare" class="text-gray-300 hover:text-gold-accent transition-colors">AFTERCARE FAQ</a>
-                    <button onclick="scrollToBooking()" class="bg-gradient-to-r from-gold-600 to-gold-accent text-dark-900 font-semibold px-5 py-2.5 rounded-md hover:brightness-110 transition-all shadow-lg shadow-gold-600/20 flex items-center gap-2">
-                        <i data-lucide="calendar" class="w-4 h-4"></i> BOOK APPOINTMENT
-                    </button>
-                </nav>
-
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white p-2">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile dropdown menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 border-b border-dark-700 px-4 pt-2 pb-6 space-y-3">
-            <a href="#portfolio" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-gold-accent py-2">Portfolio</a>
-            <a href="#pricing" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-gold-accent py-2">Pricing Tiers</a>
-            <a href="#deposit-policy" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-gold-accent py-2">Deposit Policy</a>
-            <a href="#aftercare" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-gold-accent py-2">Aftercare FAQ</a>
-            <button onclick="scrollToBooking(); toggleMobileMenu()" class="w-full mt-2 bg-gold-accent text-dark-900 font-semibold px-4 py-3 rounded-md text-center block">
-                BOOK APPOINTMENT NOW
-            </button>
-        </div>
-    </header>
-
-    <main class="flex-grow">
-        <!-- Hero Section -->
-        <section class="relative py-24 md:py-32 overflow-hidden border-b border-dark-700/50">
-            <div class="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:24px_24px]"></div>
-            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gold-600/10 rounded-full blur-[120px] pointer-events-none"></div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="text-center max-w-3xl mx-auto">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel-gold text-gold-400 text-xs tracking-widest uppercase mb-6">
-                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Custom Fine Line & Blackwork Specialist
-                    </div>
-                    <h1 class="font-serif-title text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-                        ELEVATE YOUR SKIN <br>WITH <span class="gold-gradient-text">PERMANENT ART</span>
-                    </h1>
-                    <p class="text-gray-400 text-base sm:text-lg mb-8 leading-relaxed">
-                        Besponsive, high-precision custom tattoos in a private luxury studio setting. Book your session today with a seamless 5-step reservation system.
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <button onclick="scrollToBooking()" class="w-full sm:w-auto bg-gradient-to-r from-gold-600 to-gold-accent text-dark-900 font-bold text-base px-8 py-4 rounded-lg hover:brightness-110 transition-all shadow-xl shadow-gold-600/25 flex items-center justify-center gap-3">
-                            <i data-lucide="pen-tool" class="w-5 h-5"></i> START YOUR BOOKING
-                        </button>
-                        <a href="#portfolio" class="w-full sm:w-auto glass-panel text-gray-200 font-medium text-base px-8 py-4 rounded-lg hover:bg-dark-700 transition-colors text-center border border-dark-600">
-                            EXPLORE PORTFOLIO
-                        </a>
-                    </div>
-                    <!-- Trust Highlights -->
-                    <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-dark-700/60 text-xs sm:text-sm text-gray-400">
-                        <div class="flex items-center justify-center gap-2">
-                            <i data-lucide="shield-check" class="w-4 h-4 text-gold-accent"></i> 100% Sterile & Licensed
-                        </div>
-                        <div class="flex items-center justify-center gap-2">
-                            <i data-lucide="lock" class="w-4 h-4 text-gold-accent"></i> $100 Deposit Secured
-                        </div>
-                        <div class="flex items-center justify-center gap-2">
-                            <i data-lucide="star" class="w-4 h-4 text-gold-accent"></i> 5.0 Rated Artist
-                        </div>
-                        <div class="flex items-center justify-center gap-2">
-                            <i data-lucide="heart-handshake" class="w-4 h-4 text-gold-accent"></i> Free Aftercare Kit
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="py-20 bg-dark-900 border-b border-dark-700/50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-                    <div>
-                        <span class="text-gold-accent text-xs font-semibold tracking-widest uppercase">Curated Masterpieces</span>
-                        <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-white mt-1">ARTWORK GALLERY</h2>
-                    </div>
-                    <!-- Gallery Filter -->
-                    <div class="flex flex-wrap gap-2 mt-4 md:mt-0" id="portfolio-filters">
-                        <button onclick="filterPortfolio('all')" class="filter-btn active px-4 py-1.5 rounded-full text-xs font-medium bg-gold-accent text-dark-900">All Works</button>
-                        <button onclick="filterPortfolio('fineline')" class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-dark-800 text-gray-300 hover:text-white border border-dark-700">Fine Line</button>
-                        <button onclick="filterPortfolio('blackwork')" class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-dark-800 text-gray-300 hover:text-white border border-dark-700">Blackwork</button>
-                        <button onclick="filterPortfolio('sleeves')" class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-dark-800 text-gray-300 hover:text-white border border-dark-700">Large Sleeves</button>
-                    </div>
-                </div>
-
-                <!-- Gallery Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
-                    <!-- Artwork Card 1 -->
-                    <div class="portfolio-item fineline group relative rounded-xl overflow-hidden glass-panel border border-dark-700/80 transition-all duration-300 hover:-translate-y-1">
-                        <div class="aspect-square w-full bg-dark-800 relative overflow-hidden">
-                            <svg class="w-full h-full text-gold-accent/10 p-12 transition-transform duration-500 group-hover:scale-105" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.8">
-                                <circle cx="50" cy="50" r="38" />
-                                <path d="M50 12 L50 88 M12 50 L88 50" />
-                                <polygon points="50,20 60,35 50,50 40,35" fill="rgba(212, 175, 55, 0.2)" />
-                                <polygon points="50,80 60,65 50,50 40,65" fill="rgba(212, 175, 55, 0.2)" />
-                                <circle cx="50" cy="50" r="12" fill="none" stroke="#d4af37" stroke-width="1.5" />
-                            </svg>
-                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80"></div>
-                        </div>
-                        <div class="p-5 relative">
-                            <span class="text-xs text-gold-accent font-semibold uppercase tracking-wider">Fine Line Floral & Geometry</span>
-                            <h3 class="text-lg font-bold text-white mt-1">Celestial Botanical Forearm</h3>
-                            <p class="text-xs text-gray-400 mt-1">3.5 Hours • Forearm Placement</p>
-                        </div>
-                    </div>
-
-                    <!-- Artwork Card 2 -->
-                    <div class="portfolio-item blackwork group relative rounded-xl overflow-hidden glass-panel border border-dark-700/80 transition-all duration-300 hover:-translate-y-1">
-                        <div class="aspect-square w-full bg-dark-800 relative overflow-hidden">
-                            <svg class="w-full h-full text-gold-accent/10 p-12 transition-transform duration-500 group-hover:scale-105" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1">
-                                <path d="M20 20 L80 80 M80 20 L20 80" stroke-width="2" />
-                                <circle cx="50" cy="50" r="25" stroke="#d4af37" stroke-width="2" fill="rgba(212, 175, 55, 0.1)"/>
-                                <path d="M30 50 Q 50 20 70 50 Q 50 80 30 50 Z" fill="rgba(255,255,255,0.05)" />
-                            </svg>
-                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80"></div>
-                        </div>
-                        <div class="p-5 relative">
-                            <span class="text-xs text-gold-accent font-semibold uppercase tracking-wider">Micro-Realism Blackwork</span>
-                            <h3 class="text-lg font-bold text-white mt-1">Mythological Serpent Crest</h3>
-                            <p class="text-xs text-gray-400 mt-1">5 Hours • Upper Arm</p>
-                        </div>
-                    </div>
-
-                    <!-- Artwork Card 3 -->
-                    <div class="portfolio-item sleeves group relative rounded-xl overflow-hidden glass-panel border border-dark-700/80 transition-all duration-300 hover:-translate-y-1">
-                        <div class="aspect-square w-full bg-dark-800 relative overflow-hidden">
-                            <svg class="w-full h-full text-gold-accent/10 p-12 transition-transform duration-500 group-hover:scale-105" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.8">
-                                <rect x="15" y="15" width="70" height="70" rx="8" stroke="#d4af37" />
-                                <path d="M15 50 Q 50 15 85 50 Q 50 85 15 50 Z" />
-                                <circle cx="50" cy="50" r="18" fill="rgba(212, 175, 55, 0.15)" />
-                            </svg>
-                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80"></div>
-                        </div>
-                        <div class="p-5 relative">
-                            <span class="text-xs text-gold-accent font-semibold uppercase tracking-wider">Full Sleeve Project</span>
-                            <h3 class="text-lg font-bold text-white mt-1">Architectural Gothic Sleeve</h3>
-                            <p class="text-xs text-gray-400 mt-1">18 Hours (3 Sessions) • Full Arm</p>
-                        </div>
-                    </div>
-
-                    <!-- Artwork Card 4 -->
-                    <div class="portfolio-item fineline group relative rounded-xl overflow-hidden glass-panel border border-dark-700/80 transition-all duration-300 hover:-translate-y-1">
-                        <div class="aspect-square w-full bg-dark-800 relative overflow-hidden">
-                            <svg class="w-full h-full text-gold-accent/10 p-12 transition-transform duration-500 group-hover:scale-105" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1">
-                                <circle cx="50" cy="50" r="30" stroke="#d4af37" />
-                                <path d="M50 20 L65 50 L50 80 L35 50 Z" fill="rgba(212, 175, 55, 0.1)" />
-                            </svg>
-                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80"></div>
-                        </div>
-                        <div class="p-5 relative">
-                            <span class="text-xs text-gold-accent font-semibold uppercase tracking-wider">Fine Line</span>
-                            <h3 class="text-lg font-bold text-white mt-1">Minimalist Sun & Constellation</h3>
-                            <p class="text-xs text-gray-400 mt-1">1.5 Hours • Ankle / Ribs</p>
-                        </div>
-                    </div>
-
-                    <!-- Artwork Card 5 -->
-                    <div class="portfolio-item blackwork group relative rounded-xl overflow-hidden glass-panel border border-dark-700/80 transition-all duration-300 hover:-translate-y-1">
-                        <div class="aspect-square w-full bg-dark-800 relative overflow-hidden">
-                            <svg class="w-full h-full text-gold-accent/10 p-12 transition-transform duration-500 group-hover:scale-105" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1">
-                                <polygon points="50,10 90,90 10,90" stroke="#d4af37" fill="rgba(212, 175, 55, 0.05)" />
-                                <circle cx="50" cy="60" r="15" />
-                            </svg>
-                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80"></div>
-                        </div>
-                        <div class="p-5 relative">
-                            <span class="text-xs text-gold-accent font-semibold uppercase tracking-wider">Dark Art & Shading</span>
-                            <h3 class="text-lg font-bold text-white mt-1">Geometric Skull & Hourglass</h3>
-                            <p class="text-xs text-gray-400 mt-1">4.5 Hours • Thigh Placement</p>
-                        </div>
-                    </div>
-
-                    <!-- Artwork Card 6 -->
-                    <div class="portfolio-item sleeves group relative rounded-xl overflow-hidden glass-panel border border-dark-700/80 transition-all duration-300 hover:-translate-y-1">
-                        <div class="aspect-square w-full bg-dark-800 relative overflow-hidden">
-                            <svg class="w-full h-full text-gold-accent/10 p-12 transition-transform duration-500 group-hover:scale-105" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.8">
-                                <path d="M10 10 L90 10 L90 90 L10 90 Z" stroke="#d4af37" />
-                                <path d="M10 50 Q 50 10 90 50 Q 50 90 10 50 Z" fill="rgba(212,175,55,0.15)"/>
-                            </svg>
-                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80"></div>
-                        </div>
-                        <div class="p-5 relative">
-                            <span class="text-xs text-gold-accent font-semibold uppercase tracking-wider">Bodysuit / Backpiece</span>
-                            <h3 class="text-lg font-bold text-white mt-1">Full Back Baroque Mandala</h3>
-                            <p class="text-xs text-gray-400 mt-1">24 Hours (4 Sessions) • Full Back</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing Tiers Section -->
-        <section id="pricing" class="py-20 bg-dark-800/60 border-b border-dark-700/50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-2xl mx-auto mb-16">
-                    <span class="text-gold-accent text-xs font-semibold tracking-widest uppercase">Transparent Studio Pricing</span>
-                    <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-white mt-1">TATTOO PRICING TIERS</h2>
-                    <p class="text-gray-400 text-sm mt-3">All custom designs include standard consultation, preparation, custom stencil creation, and post-session aftercare supplies.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                    <!-- Tier 1: Small -->
-                    <div class="glass-panel p-6 rounded-xl border border-dark-700 flex flex-col justify-between hover:border-gold-accent/50 transition-all">
-                        <div>
-                            <span class="text-xs font-semibold text-gold-accent uppercase tracking-wider">Tier 1</span>
-                            <h3 class="text-xl font-bold text-white mt-1">Small / Fine</h3>
-                            <div class="text-2xl font-extrabold text-gold-400 my-3">$150 - $250</div>
-                            <ul class="text-xs text-gray-300 space-y-2 mb-6">
-                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-accent"></i> Size: Up to 2" x 2"</li>
-                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-accent"></i> Est. Time: ~1 Hour</li>
-                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-accent"></i> Minimalist / Script</li>
-                            </ul>
-                        </div>
-                        <button onclick="selectTierAndBook('small')" class="w-full py-2 px-3 rounded text-xs font-bold bg-dark-700 text-gray-200 hover:bg-gold-accent hover:text-dark-900 transition-colors">Select Small</button>
-                    </div>
-
-                    <!-- Tier 2: Medium -->
-                    <div class="glass-panel p-6 rounded-xl border border-dark-700 flex flex-col justify-between hover:border-gold-accent/50 transition-all">
-                        <div>
-                            <span class="text-xs font-semibold text-gold-accent uppercase tracking-wider">Tier 2</span>
-                            <h3 class="text-xl font-bold text-white mt-1">Medium</h3>
-                            <div class="text-2xl font-extrabold text-gold-400 my-3">$300 - $500</div>
-                            <ul class="text-xs text-gray-300 space-y-2 mb-6">
-                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-accent"></i> Size: 3" x 3" to 5" x 5"</li>
-                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-accent"></i> Est. Time: 2 - 3 Hours</li>
-                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-accent"></i> Shading & Detail</li>
-                            </ul>
-                        </div>
-                        <button onclick="selectTierAndBook('medium')" class="w-full py-2 px-3 rounded text-xs font-bold bg-dark-700 text-gray-200 hover:bg-gold-accent hover:text-dark-900 transition-colors">Select Medium</button>
-                    </div>
-
-                    <!-- Tier 3: Large (Featured) -->
-                    <div class="glass-panel-gold p-6 rounded-xl border border-gold-accent/60 flex flex-col justify-between relative shadow-lg shadow-gold-600/10 scale-105 z-10">
-                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-accent text-dark-900 text-[10px] font-extrabold uppercase px-3 py-0.5 rounded-full">Most Popular</div>
-                        <div>
-                            <span class="text-xs font-semibold text-gold-accent uppercase tracking-wider">Tier 3</span>
-                            <h3 class="text-xl font-bold text-white mt-1">Large Piece</h3>
-                            <div class="text-2xl font-extrabold text-gold-400 my-3">$600 - $900</div>
-                            <ul class="text-xs text-gray-300 space-y-2 mb-6">
-                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-accent"></i> Size: Half Arm / Thigh</li>
-                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-accent"></i> Est. Time: 4 - 6 Hours</li>
-                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-accent"></i> Full Day Session</li>
-                            </ul>
-                        </div>
-                        <button onclick="selectTierAndBook('large')" class="w-full py-2 px-3 rounded text-xs font-bold bg-gold-accent text-dark-900 hover:brightness-110 transition-colors">Select Large</button>
-                    </div>
-
-                    <!-- Tier 4: Sleeve -->
-                    <div class="glass-panel p-6 rounded-xl border border-dark-700 flex flex-col justify-between hover:border-gold-accent/50 transition-all">
-                        <div>
-                            <span class="text-xs font-semibold text-gold-accent uppercase tracking-wider">Tier 4</span>
-                            <h3 class="text-xl font-bold text-white mt-1">Full Sleeve</h3>
-                            <div class="text-2xl font-extrabold text-gold-400 my-3">$1,200 - $2,000</div>
-                            <ul class="text-xs text-gray-300 space-y-2 mb-6">
-                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-accent"></i> Full Arm or Leg</li>
-                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-accent"></i> Multi-Session Project</li>
-                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-accent"></i> Priority Scheduling</li>
-                            </ul>
-                        </div>
-                        <button onclick="selectTierAndBook('sleeve')" class="w-full py-2 px-3 rounded text-xs font-bold bg-dark-700 text-gray-200 hover:bg-gold-accent hover:text-dark-900 transition-colors">Select Sleeve</button>
-                    </div>
-
-                    <!-- Tier 5: Bodysuit -->
-                    <div class="glass-panel p-6 rounded-xl border border-dark-700 flex flex-col justify-between hover:border-gold-accent/50 transition-all">
-                        <div>
-                            <span class="text-xs font-semibold text-gold-accent uppercase tracking-wider">Tier 5</span>
-                            <h3 class="text-xl font-bold text-white mt-1">Bodysuit / Back</h3>
-                            <div class="text-2xl font-extrabold text-gold-400 my-3">$2,500+</div>
-                            <ul class="text-xs text-gray-300 space-y-2 mb-6">
-                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-accent"></i> Backpiece / Full Body</li>
-                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-accent"></i> Custom Master Plan</li>
-                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-accent"></i> Dedicated VIP Slot</li>
-                            </ul>
-                        </div>
-                        <button onclick="selectTierAndBook('bodysuit')" class="w-full py-2 px-3 rounded text-xs font-bold bg-dark-700 text-gray-200 hover:bg-gold-accent hover:text-dark-900 transition-colors">Select Bodysuit</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Deposit Policy Section -->
-        <section id="deposit-policy" class="py-16 bg-dark-900 border-b border-dark-700/50">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="glass-panel p-8 sm:p-10 rounded-2xl border border-gold-accent/30 relative overflow-hidden">
-                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-gold-600/10 rounded-full blur-2xl"></div>
-                    <div class="flex flex-col md:flex-row items-start gap-6">
-                        <div class="w-14 h-14 rounded-2xl bg-gold-accent/10 border border-gold-accent/40 flex items-center justify-center shrink-0">
-                            <i data-lucide="shield-alert" class="w-7 h-7 text-gold-accent"></i>
-                        </div>
-                        <div class="space-y-3">
-                            <h3 class="font-serif-title text-2xl font-bold text-white">$100 Non-Refundable Deposit Policy</h3>
-                            <p class="text-gray-300 text-sm leading-relaxed">
-                                To reserve your dedicated session with Taylorroseink, a <strong class="text-gold-400">$100 deposit</strong> is required at the time of booking. This deposit secures your appointment date, custom illustration design time, and preparation.
-                            </p>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-xs text-gray-300">
-                                <div class="flex items-start gap-2">
-                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-accent mt-0.5 shrink-0"></i>
-                                    <span>Applied directly toward your final tattoo session balance.</span>
-                                </div>
-                                <div class="flex items-start gap-2">
-                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-accent mt-0.5 shrink-0"></i>
-                                    <span>Rescheduling permitted up to 48 hours prior without forfeiture.</span>
-                                </div>
-                                <div class="flex items-start gap-2">
-                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-accent mt-0.5 shrink-0"></i>
-                                    <span>Covers custom artwork drafting & stencil preparation.</span>
-                                </div>
-                                <div class="flex items-start gap-2">
-                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-accent mt-0.5 shrink-0"></i>
-                                    <span>Protects artist's studio time against last-minute cancellations.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Interactive 5-Step Booking Engine -->
-        <section id="booking-section" class="py-20 bg-dark-900 relative">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-10">
-                    <span class="text-gold-accent text-xs font-semibold tracking-widest uppercase">Reserve Your Experience</span>
-                    <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-white mt-1">APPOINTMENT BOOKING ENGINE</h2>
-                    <p class="text-gray-400 text-sm mt-2">Complete the 5 simple steps below to lock in your tattoo session.</p>
-                </div>
-
-                <!-- Progress Bar & Step Indicators -->
-                <div class="mb-10">
-                    <div class="flex justify-between items-center mb-3 text-xs sm:text-sm font-medium text-gray-400">
-                        <span id="step-label-1" class="text-gold-accent font-bold">1. Size & Concept</span>
-                        <span id="step-label-2">2. Placement</span>
-                        <span id="step-label-3">3. Schedule</span>
-                        <span id="step-label-4">4. Details</span>
-                        <span id="step-label-5">5. Review & Deposit</span>
-                    </div>
-                    <div class="w-full h-2 bg-dark-700 rounded-full overflow-hidden">
-                        <div id="booking-progress-bar" class="h-full bg-gradient-to-r from-gold-600 to-gold-accent transition-all duration-500 w-[20%]"></div>
-                    </div>
-                </div>
-
-                <!-- Booking Engine Container -->
-                <div class="glass-panel p-6 sm:p-10 rounded-2xl border border-gold-accent/20">
-                    <form id="tattoo-booking-form" onsubmit="event.preventDefault();">
-                        
-                        <!-- STEP 1: Size & Concept -->
-                        <div id="booking-step-1" class="booking-step space-y-6">
-                            <h3 class="text-xl font-bold text-white border-b border-dark-700 pb-3 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded-full bg-gold-accent text-dark-900 text-xs flex items-center justify-center font-bold">1</span>
-                                Select Design Size & Style Tier
-                            </h3>
-                            
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                <label class="cursor-pointer">
-                                    <input type="radio" name="size_tier" value="small" class="peer hidden" onchange="updateBookingData('tier', 'small')" checked>
-                                    <div class="p-4 rounded-xl border border-dark-700 bg-dark-800 peer-checked:border-gold-accent peer-checked:bg-gold-accent/10 hover:border-dark-600 transition-all text-center">
-                                        <i data-lucide="sparkles" class="w-6 h-6 text-gold-accent mx-auto mb-2"></i>
-                                        <div class="font-bold text-white text-sm">Small / Fine Line</div>
-                                        <div class="text-xs text-gold-400 font-semibold mt-1">$150 - $250</div>
-                                        <div class="text-[11px] text-gray-400 mt-1">Up to 2" x 2"</div>
-                                    </div>
-                                </label>
-
-                                <label class="cursor-pointer">
-                                    <input type="radio" name="size_tier" value="medium" class="peer hidden" onchange="updateBookingData('tier', 'medium')">
-                                    <div class="p-4 rounded-xl border border-dark-700 bg-dark-800 peer-checked:border-gold-accent peer-checked:bg-gold-accent/10 hover:border-dark-600 transition-all text-center">
-                                        <i data-lucide="compass" class="w-6 h-6 text-gold-accent mx-auto mb-2"></i>
-                                        <div class="font-bold text-white text-sm">Medium Piece</div>
-                                        <div class="text-xs text-gold-400 font-semibold mt-1">$300 - $500</div>
-                                        <div class="text-[11px] text-gray-400 mt-1">3" x 3" - 5" x 5"</div>
-                                    </div>
-                                </label>
-
-                                <label class="cursor-pointer">
-                                    <input type="radio" name="size_tier" value="large" class="peer hidden" onchange="updateBookingData('tier', 'large')">
-                                    <div class="p-4 rounded-xl border border-dark-700 bg-dark-800 peer-checked:border-gold-accent peer-checked:bg-gold-accent/10 hover:border-dark-600 transition-all text-center">
-                                        <i data-lucide="crown" class="w-6 h-6 text-gold-accent mx-auto mb-2"></i>
-                                        <div class="font-bold text-white text-sm">Large Piece</div>
-                                        <div class="text-xs text-gold-400 font-semibold mt-1">$600 - $900</div>
-                                        <div class="text-[11px] text-gray-400 mt-1">Half Arm / Thigh</div>
-                                    </div>
-                                </label>
-
-                                <label class="cursor-pointer">
-                                    <input type="radio" name="size_tier" value="sleeve" class="peer hidden" onchange="updateBookingData('tier', 'sleeve')">
-                                    <div class="p-4 rounded-xl border border-dark-700 bg-dark-800 peer-checked:border-gold-accent peer-checked:bg-gold-accent/10 hover:border-dark-600 transition-all text-center">
-                                        <i data-lucide="layers" class="w-6 h-6 text-gold-accent mx-auto mb-2"></i>
-                                        <div class="font-bold text-white text-sm">Full Sleeve</div>
-                                        <div class="text-xs text-gold-400 font-semibold mt-1">$1,200 - $2,000</div>
-                                        <div class="text-[11px] text-gray-400 mt-1">Full Arm/Leg Project</div>
-                                    </div>
-                                </label>
-
-                                <label class="cursor-pointer sm:col-span-2">
-                                    <input type="radio" name="size_tier" value="bodysuit" class="peer hidden" onchange="updateBookingData('tier', 'bodysuit')">
-                                    <div class="p-4 rounded-xl border border-dark-700 bg-dark-800 peer-checked:border-gold-accent peer-checked:bg-gold-accent/10 hover:border-dark-600 transition-all text-center flex items-center justify-center gap-4">
-                                        <i data-lucide="shield" class="w-6 h-6 text-gold-accent"></i>
-                                        <div class="text-left">
-                                            <div class="font-bold text-white text-sm">Bodysuit / Full Back</div>
-                                            <div class="text-xs text-gold-400 font-semibold">$2,500+ (Multi-Session)</div>
-                                        </div>
-                                    </div>
-                                </label>
-                            </div>
-
-                            <div class="space-y-2">
-                                <label class="block text-xs font-semibold uppercase text-gray-300">Design Concept Brief</label>
-                                <textarea id="concept-description" rows="3" class="w-full bg-dark-800 border border-dark-700 rounded-lg p-3 text-sm text-white focus:border-gold-accent outline-none gold-border-glow" placeholder="Describe your tattoo idea, symbolism, references, or preferred style..."></textarea>
-                            </div>
-
-                            <div class="flex justify-end pt-4">
-                                <button type="button" onclick="goToStep(2)" class="bg-gold-accent text-dark-900 font-bold px-6 py-3 rounded-lg hover:brightness-110 flex items-center gap-2">
-                                    Next: Placement <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- STEP 2: Placement & Body Site -->
-                        <div id="booking-step-2" class="booking-step hidden space-y-6">
-                            <h3 class="text-xl font-bold text-white border-b border-dark-700 pb-3 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded-full bg-gold-accent text-dark-900 text-xs flex items-center justify-center font-bold">2</span>
-                                Body Placement Selection
-                            </h3>
-
-                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                                <button type="button" onclick="selectPlacement('Forearm')" class="placement-btn p-3 rounded-lg border border-dark-700 bg-dark-800 text-xs font-semibold text-gray-200 hover:border-gold-accent focus:border-gold-accent text-center">Forearm</button>
-                                <button type="button" onclick="selectPlacement('Upper Arm')" class="placement-btn p-3 rounded-lg border border-dark-700 bg-dark-800 text-xs font-semibold text-gray-200 hover:border-gold-accent focus:border-gold-accent text-center">Upper Arm</button>
-                                <button type="button" onclick="selectPlacement('Chest / Sternum')" class="placement-btn p-3 rounded-lg border border-dark-700 bg-dark-800 text-xs font-semibold text-gray-200 hover:border-gold-accent focus:border-gold-accent text-center">Chest / Sternum</button>
-                                <button type="button" onclick="selectPlacement('Full Back')" class="placement-btn p-3 rounded-lg border border-dark-700 bg-dark-800 text-xs font-semibold text-gray-200 hover:border-gold-accent focus:border-gold-accent text-center">Full Back</button>
-                                <button type="button" onclick="selectPlacement('Thigh')" class="placement-btn p-3 rounded-lg border border-dark-700 bg-dark-800 text-xs font-semibold text-gray-200 hover:border-gold-accent focus:border-gold-accent text-center">Thigh</button>
-                                <button type="button" onclick="selectPlacement('Calf / Ankle')" class="placement-btn p-3 rounded-lg border border-dark-700 bg-dark-800 text-xs font-semibold text-gray-200 hover:border-gold-accent focus:border-gold-accent text-center">Calf / Ankle</button>
-                                <button type="button" onclick="selectPlacement('Ribs / Side')" class="placement-btn p-3 rounded-lg border border-dark-700 bg-dark-800 text-xs font-semibold text-gray-200 hover:border-gold-accent focus:border-gold-accent text-center">Ribs / Side</button>
-                                <button type="button" onclick="selectPlacement('Other Spot')" class="placement-btn p-3 rounded-lg border border-dark-700 bg-dark-800 text-xs font-semibold text-gray-200 hover:border-gold-accent focus:border-gold-accent text-center">Other Spot</button>
-                            </div>
-
-                            <div class="space-y-2">
-                                <label class="block text-xs font-semibold uppercase text-gray-300">Specific Placement Notes or Cover-Up details</label>
-                                <input type="text" id="placement-notes" class="w-full bg-dark-800 border border-dark-700 rounded-lg p-3 text-sm text-white focus:border-gold-accent outline-none gold-border-glow" placeholder="e.g. Left inner forearm, replacing/covering an old micro-tattoo...">
-                            </div>
-
-                            <div class="flex justify-between pt-4">
-                                <button type="button" onclick="goToStep(1)" class="bg-dark-700 text-gray-300 font-semibold px-5 py-2.5 rounded-lg hover:bg-dark-600">Back</button>
-                                <button type="button" onclick="goToStep(3)" class="bg-gold-accent text-dark-900 font-bold px-6 py-3 rounded-lg hover:brightness-110 flex items-center gap-2">
-                                    Next: Schedule Date <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- STEP 3: Schedule Date & Time Slot -->
-                        <div id="booking-step-3" class="booking-step hidden space-y-6">
-                            <h3 class="text-xl font-bold text-white border-b border-dark-700 pb-3 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded-full bg-gold-accent text-dark-900 text-xs flex items-center justify-center font-bold">3</span>
-                                Select Preferred Date & Time
-                            </h3>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-xs font-semibold uppercase text-gray-300 mb-2">Choose Appointment Date</label>
-                                    <input type="date" id="appointment-date" class="w-full bg-dark-800 border border-dark-700 rounded-lg p-3 text-sm text-white focus:border-gold-accent outline-none" onchange="updateBookingData('date', this.value)">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold uppercase text-gray-300 mb-2">Select Available Time Slot</label>
-                                    <div class="grid grid-cols-2 gap-2">
-                                        <button type="button" onclick="selectTimeSlot('11:00 AM')" class="timeslot-btn p-3 rounded-lg border border-dark-700 bg-dark-800 text-xs font-semibold text-gray-200 hover:border-gold-accent">11:00 AM</button>
-                                        <button type="button" onclick="selectTimeSlot('02:00 PM')" class="timeslot-btn p-3 rounded-lg border border-dark-700 bg-dark-800 text-xs font-semibold text-gray-200 hover:border-gold-accent">02:00 PM</button>
-                                        <button type="button" onclick="selectTimeSlot('04:30 PM')" class="timeslot-btn p-3 rounded-lg border border-dark-700 bg-dark-800 text-xs font-semibold text-gray-200 hover:border-gold-accent">04:30 PM</button>
-                                        <button type="button" onclick="selectTimeSlot('07:00 PM')" class="timeslot-btn p-3 rounded-lg border border-dark-700 bg-dark-800 text-xs font-semibold text-gray-200 hover:border-gold-accent">07:00 PM</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex justify-between pt-4">
-                                <button type="button" onclick="goToStep(2)" class="bg-dark-700 text-gray-300 font-semibold px-5 py-2.5 rounded-lg hover:bg-dark-600">Back</button>
-                                <button type="button" onclick="goToStep(4)" class="bg-gold-accent text-dark-900 font-bold px-6 py-3 rounded-lg hover:brightness-110 flex items-center gap-2">
-                                    Next: Client Info <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- STEP 4: Client Contact Information -->
-                        <div id="booking-step-4" class="booking-step hidden space-y-6">
-                            <h3 class="text-xl font-bold text-white border-b border-dark-700 pb-3 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded-full bg-gold-accent text-dark-900 text-xs flex items-center justify-center font-bold">4</span>
-                                Client Details & Contact
-                            </h3>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-semibold uppercase text-gray-300 mb-1">Full Name *</label>
-                                    <input type="text" id="client-name" required class="w-full bg-dark-800 border border-dark-700 rounded-lg p-3 text-sm text-white focus:border-gold-accent outline-none" placeholder="e.g. Alex Morgan">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold uppercase text-gray-300 mb-1">Email Address *</label>
-                                    <input type="email" id="client-email" required class="w-full bg-dark-800 border border-dark-700 rounded-lg p-3 text-sm text-white focus:border-gold-accent outline-none" placeholder="alex@example.com">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold uppercase text-gray-300 mb-1">Phone Number *</label>
-                                    <input type="tel" id="client-phone" required class="w-full bg-dark-800 border border-dark-700 rounded-lg p-3 text-sm text-white focus:border-gold-accent outline-none" placeholder="(555) 000-0000">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold uppercase text-gray-300 mb-1">Instagram Handle (Optional)</label>
-                                    <input type="text" id="client-instagram" class="w-full bg-dark-800 border border-dark-700 rounded-lg p-3 text-sm text-white focus:border-gold-accent outline-none" placeholder="@yourhandle">
-                                </div>
-                            </div>
-
-                            <div class="flex justify-between pt-4">
-                                <button type="button" onclick="goToStep(3)" class="bg-dark-700 text-gray-300 font-semibold px-5 py-2.5 rounded-lg hover:bg-dark-600">Back</button>
-                                <button type="button" onclick="goToStep(5)" class="bg-gold-accent text-dark-900 font-bold px-6 py-3 rounded-lg hover:brightness-110 flex items-center gap-2">
-                                    Next: Summary & Deposit <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- STEP 5: Order Summary & $100 Deposit Confirmation -->
-                        <div id="booking-step-5" class="booking-step hidden space-y-6">
-                            <h3 class="text-xl font-bold text-white border-b border-dark-700 pb-3 flex items-center gap-2">
-                                <span class="w-6 h-6 rounded-full bg-gold-accent text-dark-900 text-xs flex items-center justify-center font-bold">5</span>
-                                Booking Summary & $100 Deposit Lock
-                            </h3>
-
-                            <!-- Summary Card -->
-                            <div class="bg-dark-800 p-5 rounded-xl border border-dark-700 space-y-3 text-sm">
-                                <div class="flex justify-between border-b border-dark-700/60 pb-2">
-                                    <span class="text-gray-400">Selected Tier:</span>
-                                    <span id="summary-tier" class="font-bold text-gold-accent">Small / Fine Line ($150 - $250)</span>
-                                </div>
-                                <div class="flex justify-between border-b border-dark-700/60 pb-2">
-                                    <span class="text-gray-400">Body Placement:</span>
-                                    <span id="summary-placement" class="font-semibold text-white">Forearm</span>
-                                </div>
-                                <div class="flex justify-between border-b border-dark-700/60 pb-2">
-                                    <span class="text-gray-400">Appointment Date & Time:</span>
-                                    <span id="summary-datetime" class="font-semibold text-white">Not Selected</span>
-                                </div>
-                                <div class="flex justify-between border-b border-dark-700/60 pb-2">
-                                    <span class="text-gray-400">Client Name:</span>
-                                    <span id="summary-client" class="font-semibold text-white">-</span>
-                                </div>
-                                <div class="flex justify-between pt-2 text-base">
-                                    <span class="font-bold text-white">Deposit Due Now:</span>
-                                    <span class="font-extrabold text-gold-400">$100.00 USD</span>
-                                </div>
-                            </div>
-
-                            <!-- Policy Agreement Checkbox -->
-                            <div class="flex items-start gap-3 pt-2">
-                                <input type="checkbox" id="policy-agree" class="mt-1 accent-gold-accent rounded">
-                                <label for="policy-agree" class="text-xs text-gray-300 leading-relaxed">
-                                    I agree to the <strong class="text-white">$100 non-refundable deposit policy</strong> and acknowledge that cancellations made under 48 hours will forfeit the deposit.
-                                </label>
-                            </div>
-
-                            <div class="flex justify-between pt-4">
-                                <button type="button" onclick="goToStep(4)" class="bg-dark-700 text-gray-300 font-semibold px-5 py-2.5 rounded-lg hover:bg-dark-600">Back</button>
-                                <button type="button" onclick="confirmAppointmentBooking()" class="bg-gradient-to-r from-gold-600 to-gold-accent text-dark-900 font-extrabold px-8 py-3.5 rounded-lg hover:brightness-110 shadow-xl shadow-gold-600/20 flex items-center gap-2">
-                                    <i data-lucide="check-circle" class="w-5 h-5"></i> CONFIRM & SECURE $100 DEPOSIT
-                                </button>
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- Aftercare & FAQ Section -->
-        <section id="aftercare" class="py-20 bg-dark-800/40 border-b border-dark-700/50">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-2xl mx-auto mb-16">
-                    <span class="text-gold-accent text-xs font-semibold tracking-widest uppercase">Essential Care Instructions</span>
-                    <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-white mt-1">TATTOO AFTERCARE & FAQ</h2>
-                    <p class="text-gray-400 text-sm mt-2">Everything you need to know before and after your studio session.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- FAQ Item 1 -->
-                    <div class="glass-panel p-6 rounded-xl border border-dark-700">
-                        <h3 class="text-base font-bold text-white flex items-center gap-2">
-                            <i data-lucide="droplet" class="w-4 h-4 text-gold-accent"></i> How do I care for my tattoo during the first 24 hours?
-                        </h3>
-                        <p class="text-xs text-gray-300 mt-2 leading-relaxed">
-                            Keep your second-skin protective film on for 24 hours unless excessive fluid builds up. Gently wash with unscented antibacterial soap and tepid water, pat dry with a clean paper towel, and apply a thin layer of specialized balm.
-                        </p>
-                    </div>
-
-                    <!-- FAQ Item 2 -->
-                    <div class="glass-panel p-6 rounded-xl border border-dark-700">
-                        <h3 class="text-base font-bold text-white flex items-center gap-2">
-                            <i data-lucide="sun" class="w-4 h-4 text-gold-accent"></i> Can I swim or sunbathe while healing?
-                        </h3>
-                        <p class="text-xs text-gray-300 mt-2 leading-relaxed">
-                            Avoid direct sunlight, tanning beds, ocean water, swimming pools, and saunas for at least 2 to 3 weeks during the active healing phase to protect your skin and preserve ink clarity.
-                        </p>
-                    </div>
-
-                    <!-- FAQ Item 3 -->
-                    <div class="glass-panel p-6 rounded-xl border border-dark-700">
-                        <h3 class="text-base font-bold text-white flex items-center gap-2">
-                            <i data-lucide="calendar" class="w-4 h-4 text-gold-accent"></i> What is the rescheduling policy?
-                        </h3>
-                        <p class="text-xs text-gray-300 mt-2 leading-relaxed">
-                            You can reschedule your appointment up to 48 hours prior to your slot without losing your $100 deposit. Rescheduling under 48 hours will require a new deposit.
-                        </p>
-                    </div>
-
-                    <!-- FAQ Item 4 -->
-                    <div class="glass-panel p-6 rounded-xl border border-dark-700">
-                        <h3 class="text-base font-bold text-white flex items-center gap-2">
-                            <i data-lucide="alert-circle" class="w-4 h-4 text-gold-accent"></i> Are touch-ups included?
-                        </h3>
-                        <p class="text-xs text-gray-300 mt-2 leading-relaxed">
-                            Yes! A complimentary touch-up session is offered within 6 months of your original session to ensure perfect healed lines and shading saturation.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Booking Confirmation Modal -->
-    <div id="confirmation-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
-        <div class="glass-panel max-w-lg w-full p-8 rounded-2xl border border-gold-accent/40 relative shadow-2xl animate-fade-in text-center space-y-6">
-            <div class="w-16 h-16 rounded-full bg-gold-accent/20 border border-gold-accent text-gold-accent mx-auto flex items-center justify-center">
-                <i data-lucide="check-circle-2" class="w-10 h-10"></i>
-            </div>
-            <div>
-                <span class="text-xs text-gold-accent font-semibold tracking-widest uppercase">Booking Request Received</span>
-                <h3 class="font-serif-title text-2xl font-bold text-white mt-1">APPOINTMENT RESERVED!</h3>
-                <p class="text-xs text-gray-300 mt-2">
-                    Thank you, <span id="modal-client-name" class="text-gold-400 font-semibold">Client</span>. Your appointment has been drafted for Taylorroseink!
-                </p>
-            </div>
-
-            <div class="bg-dark-800 p-4 rounded-xl border border-dark-700 text-left text-xs space-y-2">
-                <div class="flex justify-between"><span class="text-gray-400">Confirmation Code:</span><span id="modal-conf-code" class="font-mono text-gold-accent">TRI-88392</span></div>
-                <div class="flex justify-between"><span class="text-gray-400">Tier & Size:</span><span id="modal-tier" class="text-white">Medium Piece</span></div>
-                <div class="flex justify-between"><span class="text-gray-400">Date & Time:</span><span id="modal-datetime" class="text-white">Not set</span></div>
-                <div class="flex justify-between"><span class="text-gray-400">Placement:</span><span id="modal-placement" class="text-white">Forearm</span></div>
-                <div class="flex justify-between pt-1 border-t border-dark-700"><span class="text-gray-400">Deposit Status:</span><span class="text-emerald-400 font-bold">$100 Secured</span></div>
-            </div>
-
-            <p class="text-[11px] text-gray-400">
-                A confirmation email with studio directions, prep guidelines, and receipt for your $100 deposit has been sent to your inbox.
-            </p>
-
-            <button onclick="closeConfirmationModal()" class="w-full bg-gold-accent text-dark-900 font-bold py-3 rounded-lg hover:brightness-110">
-                CLOSE & RETURN TO STUDIO
-            </button>
-        </div>
-    </div>
-
-    <!-- Studio Footer -->
-    <footer class="bg-dark-900 border-t border-dark-700/60 py-12 text-xs text-gray-400">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-full border border-gold-accent/40 flex items-center justify-center bg-dark-800">
-                    <i data-lucide="feather" class="w-4 h-4 text-gold-accent"></i>
-                </div>
-                <div>
-                    <span class="font-serif-title font-bold text-white text-sm">TAYLORROSEINK</span>
-                    <p class="text-[10px] text-gray-400">High-End Private Tattoo Studio • By Appointment Only</p>
-                </div>
-            </div>
-
-            <div class="flex items-center gap-6">
-                <a href="#" class="hover:text-gold-accent transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                <a href="#" class="hover:text-gold-accent transition-colors"><i data-lucide="mail" class="w-5 h-5"></i></a>
-                <a href="#" class="hover:text-gold-accent transition-colors"><i data-lucide="map-pin" class="w-5 h-5"></i></a>
-            </div>
-
-            <div class="text-center md:text-right">
-                <p>&copy; 2026 Taylorroseink. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Interactive Logic -->
-    <script>
-        // State store for booking form
-        const bookingState = {
-            currentStep: 1,
-            tier: 'small',
-            placement: 'Forearm',
-            date: '',
-            time: '11:00 AM',
-            clientName: '',
-            clientEmail: '',
-            clientPhone: '',
-            clientInstagram: '',
-            concept: ''
-        };
-
-        const tierNames = {
-            small: 'Small / Fine Line ($150 - $250)',
-            medium: 'Medium Piece ($300 - $500)',
-            large: 'Large Piece ($600 - $900)',
-            sleeve: 'Full Sleeve ($1,200 - $2,000)',
-            bodysuit: 'Bodysuit / Full Back ($2,500+)'
-        };
-
-        // DOM Initialization
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-            // Default date setup (tomorrow)
-            const tomorrow = new Date();
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            const dateInput = document.getElementById('appointment-date');
-            if (dateInput) {
-                dateInput.min = tomorrow.toISOString().split('T')[0];
-                dateInput.value = tomorrow.toISOString().split('T')[0];
-                bookingState.date = dateInput.value;
-            }
-        });
-
-        // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-
-        // Smooth Scroll to Booking Section
-        function scrollToBooking() {
-            document.getElementById('booking-section').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Portfolio Filtering
-        function filterPortfolio(category) {
-            const items = document.querySelectorAll('.portfolio-item');
-            const filterBtns = document.querySelectorAll('#portfolio-filters button');
-
-            filterBtns.forEach(btn => {
-                btn.classList.remove('bg-gold-accent', 'text-dark-900');
-                btn.classList.add('bg-dark-800', 'text-gray-300');
-            });
-
-            event.target.classList.remove('bg-dark-800', 'text-gray-300');
-            event.target.classList.add('bg-gold-accent', 'text-dark-900');
-
-            items.forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-
-        // Select Tier from Price List Cards Directly
-        function selectTierAndBook(tier) {
-            bookingState.tier = tier;
-            const radio = document.querySelector(`input[name="size_tier"][value="${tier}"]`);
-            if (radio) radio.checked = true;
-            scrollToBooking();
-            goToStep(1);
-        }
-
-        // Step Navigation
-        function goToStep(stepNumber) {
-            // Hide current step
-            document.querySelectorAll('.booking-step').forEach(step => step.classList.add('hidden'));
-            
-            // Show new step
-            const targetStep = document.getElementById(`booking-step-${stepNumber}`);
-            if (targetStep) targetStep.classList.remove('hidden');
-
-            bookingState.currentStep = stepNumber;
-
-            // Update Progress Bar
-            const progressBar = document.getElementById('booking-progress-bar');
-            progressBar.style.width = `${(stepNumber / 5) * 100}%`;
-
-            // Update Step Labels Highlight
-            for (let i = 1; i <= 5; i++) {
-                const label = document.getElementById(`step-label-${i}`);
-                if (label) {
-                    if (i === stepNumber) {
-                        label.className = 'text-gold-accent font-bold';
+<body>
+  <header>
+    <h1>Book an Appointment</h1>
+    <p>We look forward to seeing you!</p>
+  </header>
+
+  <main>
+    <h2>Request Your Booking</h2>
+    <p>Complete the form below to request an appointment.</p>
+
+    <form action="https://formsubmit.co/destinyhines71@gmail.com" method="POST" id="bookingForm">
+      <label for="name">Full name</label>
+      <input id="name" name="name" required>
+
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" required>
+
+      <label for="phone">Phone number</label>
+      <input id="phone" name="phone" type="tel" required>
+
+      <label for="service">Choose a service</label>
+      <select id="service" name="service" required>
+        <option value="">Select a service</option>
+        <option>Consultation</option>
+        <option>Personal appointment</option>
+        <option>Other service</option>
+      </select>
+
+      <label for="date">Preferred date</label>
+      <input id="date" name="date" type="date" required>
+
+      <label for="time">Preferred time</label>
+      <select id="time" name="time" required>
+        <option value="">Select a time</option>
+        <option>9:00 AM</option>
+        <option>10:00 AM</option>
+        <option>11:00 AM</option>
+        <option>12:00 PM</option>
+        <option>1:00 PM</option>
+        <option>2:00 PM</option>
+        <option>3:00 PM</option>
+        <option>4:00 PM</option>
+      </select>
+
+      <label for="notes">Additional details (optional)</label>
+      <textarea id="notes" name="notes" rows="3"></textarea>
+
+      <button type="submit">Request Appointment</button>
+      <p id="message" role="status"></p>
+    </form>
+  </main>
+
+  <footer>Thank you for choosing us.</footer>
+</body>
                     } else                     } else 
